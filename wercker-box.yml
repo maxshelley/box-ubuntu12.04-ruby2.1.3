@@ -4,18 +4,18 @@ inherits: wercker/ubuntu12.04-webessentials@0.0.12
 type: main
 platform: ubuntu@12.04
 packages:
-  - ruby@2.1.2p132
+  - ruby@2.1.2
 keywords:
   - ruby
 script: |
-  export RUBYVERSION=2.1.2p132
+  export RUBYVERSION=2.1.2
   sudo apt-get update
   sudo apt-get install git zlib1g-dev libreadline-dev libqtwebkit-dev
   sudo apt-get remove ruby1.9.1
   cd $HOME
   mkdir rubyinstall
   cd rubyinstall
-  wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-$RUBYVERSION.tar.gz
+  wget ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-$RUBYVERSION.tar.gz
   tar xzvf ruby-$RUBYVERSION.tar.gz
   cd ruby-$RUBYVERSION
   ./configure --with-readline-dir=/usr/include/readline --with-openssl-dir=/usr/include/openssl
